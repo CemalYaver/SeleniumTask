@@ -47,7 +47,7 @@ public class Example {
 	        System.out.println("samsung için arama yapıldı");
 	    }
 	    else {
-	        System.out.println("samsung i�in arama yapılmadı");
+	        System.out.println("samsung için arama yapılmadı");
 	    }
 	    	
 	    String pageControl = driver.findElement(By.xpath("//meta[@name='keywords']")).getText();
