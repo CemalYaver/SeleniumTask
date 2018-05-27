@@ -13,10 +13,10 @@ public class Example {
 		String mainPageControl = driver.findElement(By.xpath("//link[@rel='canonical']")).getText();
 		
 		 if(mainPageControl.contains("https://www.amazon.com/")) {
-		    	System.out.println("Burası Anasayfa");
+		    	System.out.println("BurasÄ± Anasayfa");
 		    }
 		    else {
-		    	System.out.println("Burası Anasayfa Değil!");
+		    	System.out.println("BurasÄ± Anasayfa DeÄŸil!");
 		    }
 	
 		WebElement link = driver.findElement(By.className("nav-action-inner"));
@@ -44,19 +44,19 @@ public class Example {
 		boolean searchVerification = driver.getTitle().contains("samsung");
 
 	    if(searchVerification) {
-	        System.out.println("samsung için arama yapıldı");
+	        System.out.println("samsung iÃ§in arama yapÄ±ldÄ±");
 	    }
 	    else {
-	        System.out.println("samsung için arama yapılmadı");
+	        System.out.println("samsung iï¿½in arama yapÄ±lmadÄ±");
 	    }
 	    	
 	    String pageControl = driver.findElement(By.xpath("//meta[@name='keywords']")).getText();
 	    
 	    if(pageControl.contains("Page 2")) {
-	    	System.out.println("Burası 2.sayfa");
+	    	System.out.println("BurasÄ± 2.sayfa");
 	    }
 	    else {
-	    	System.out.println("Burası 2.sayfa değil!");
+	    	System.out.println("BurasÄ± 2.sayfa deÄŸil!");
 	    }
 	    
 		WebElement productIdName = driver.findElement(By.id("result_18"));
