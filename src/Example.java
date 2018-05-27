@@ -29,8 +29,7 @@ public class Example {
 		WebElement continueIdName = continueClassName.findElement(By.id("continue"));
 		continueIdName.submit();
 		
-		WebElement PasswordClassName = driver.findElement(By.className("a-section a-spacing-large"));
-		WebElement PasswordIdName = PasswordClassName.findElement(By.id("ap_password"));
+		WebElement PasswordIdName = driver.findElement(By.id("ap_password"));
 		PasswordIdName.sendKeys("1234567");
 		
 		WebElement SignInClassName = driver.findElement(By.className("a-button a-button-span12 a-button-primary"));
