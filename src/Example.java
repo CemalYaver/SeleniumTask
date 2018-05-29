@@ -38,7 +38,7 @@ public class Example {
 		
 		WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
 		searchBox.sendKeys("samsung");
-		searchBox.submit(); 
+		searchBox.submit();  
 		
 		boolean searchVerification = driver.getTitle().contains("samsung");
 
