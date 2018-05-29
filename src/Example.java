@@ -10,9 +10,9 @@ public class Example {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
 		
-		String mainPageControl = driver.findElement(By.xpath("//link[@rel='canonical']")).getText();
+		WebElement mainPageControl = driver.findElement(By.xpath("//link[@rel='canonical' and @href='https://www.amazon.com/']"));
 		
-		 if(mainPageControl.contains("https://www.amazon.com/")) {
+		 if(mainPageControl != null) {
 		    	System.out.println("Burası Anasayfa");
 		    }
 		    else {
@@ -30,7 +30,7 @@ public class Example {
 		SignInContinueName.submit();	
 		
 		WebElement PasswordIdName = driver.findElement(By.id("ap_password"));
-		PasswordIdName.sendKeys("123456");
+		PasswordIdName.sendKeys("11331133");
 		
 		WebElement SignInClassName = driver.findElement(By.className("a-section"));
 		WebElement SignInIdName = SignInClassName.findElement(By.id("a-autoid-0"));
