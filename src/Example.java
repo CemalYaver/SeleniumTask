@@ -30,7 +30,7 @@ public class Example {
 		SignInContinueName.submit();	
 		
 		WebElement PasswordIdName = driver.findElement(By.id("ap_password"));
-		PasswordIdName.sendKeys("11331133");
+		PasswordIdName.sendKeys("123467");
 		
 		WebElement SignInClassName = driver.findElement(By.className("a-section"));
 		WebElement SignInIdName = SignInClassName.findElement(By.id("a-autoid-0"));
@@ -38,7 +38,7 @@ public class Example {
 		
 		WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
 		searchBox.sendKeys("samsung");
-		searchBox.submit();
+		searchBox.submit(); 
 		
 		boolean searchVerification = driver.getTitle().contains("samsung");
 
