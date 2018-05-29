@@ -19,8 +19,8 @@ public class Example {
 		    	System.out.println("Burası Anasayfa Değil!");
 		    }
 			
-			WebElement SignIn = driver.findElement(By.linkText("Sign in"));
-			SignIn.click();
+		WebElement SignIn = driver.findElement(By.linkText("Sign in"));
+		SignIn.click();
 			 
 		WebElement userIdName = driver.findElement(By.id("ap_email"));
 		userIdName.sendKeys("cemalyaver@gmail.com");
