@@ -1,13 +1,13 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Example {
 	public static void main(String[] args) {
-	    System.setProperty("webdriver.firefox.marionette","C:\\Users\\cemal\\workspace\\geckodriver\\geckodriver.exe");
-		  
-		WebDriver driver = new FirefoxDriver();
+    
+	    System.setProperty("webdriver.chrome.driver","C:\\Users\\cemal\\Desktop\\chromedriver_win32(1)\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
 		
 		String mainPageControl = driver.findElement(By.xpath("//link[@rel='canonical']")).getText();
@@ -18,22 +18,22 @@ public class Example {
 		    else {
 		    	System.out.println("Burası Anasayfa Değil!");
 		    }
-	
-		WebElement link = driver.findElement(By.className("nav-action-inner"));
-		link.click();
-		
+			
+			WebElement SignIn = driver.findElement(By.linkText("Sign in"));
+			SignIn.click();
+			 
 		WebElement userIdName = driver.findElement(By.id("ap_email"));
 		userIdName.sendKeys("cemalyaver@gmail.com");
 		
-		WebElement continueClassName = driver.findElement(By.className("a-button a-button-span12 a-button-primary"));
-		WebElement continueIdName = continueClassName.findElement(By.id("continue"));
-		continueIdName.submit();
+		WebElement SignInClassContinue = driver.findElement(By.className("a-section"));
+		WebElement SignInContinueName = SignInClassContinue.findElement(By.id("continue-announce"));
+		SignInContinueName.submit();	
 		
 		WebElement PasswordIdName = driver.findElement(By.id("ap_password"));
-		PasswordIdName.sendKeys("1234567");
+		PasswordIdName.sendKeys("123456");
 		
-		WebElement SignInClassName = driver.findElement(By.className("a-button a-button-span12 a-button-primary"));
-		WebElement SignInIdName = SignInClassName.findElement(By.id("signInSubmit"));
+		WebElement SignInClassName = driver.findElement(By.className("a-section"));
+		WebElement SignInIdName = SignInClassName.findElement(By.id("a-autoid-0"));
 		SignInIdName.submit();
 		
 		WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
