@@ -7,6 +7,7 @@ public class Example {
 	public static void main(String[] args) {
     
 	    System.setProperty("webdriver.chrome.driver","C:\\Users\\cemal\\Desktop\\chromedriver_win32(1)\\chromedriver.exe");
+	    
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
 		
@@ -30,7 +31,7 @@ public class Example {
 		SignInContinueName.submit();	
 		
 		WebElement PasswordIdName = driver.findElement(By.id("ap_password"));
-		PasswordIdName.sendKeys("123467");
+		PasswordIdName.sendKeys("11331133");
 		
 		WebElement SignInClassName = driver.findElement(By.className("a-section"));
 		WebElement SignInIdName = SignInClassName.findElement(By.id("a-autoid-0"));
@@ -39,7 +40,7 @@ public class Example {
 		WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
 		searchBox.sendKeys("samsung");
 		searchBox.submit();  
-		
+		 
 		boolean searchVerification = driver.getTitle().contains("samsung");
 
 	    if(searchVerification) {
@@ -48,19 +49,22 @@ public class Example {
 	    else {
 	        System.out.println("samsung için arama yapılmadı");
 	    }
-	    	
-	    String pageControl = driver.findElement(By.xpath("//meta[@name='keywords']")).getText();
 	    
-	    if(pageControl.contains("Page 2")) {
-	    	System.out.println("Burası 2.sayfa");
-	    }
-	    else {
-	    	System.out.println("Burası 2.sayfa değil!");
-	    }
-	    
+	    WebElement a = driver.findElement(By.linkText("2"));
+		a.click();
+		
+		boolean pageControl = driver.findElement(By.xpath("//[@content]")).getText().contains("Page 2");
+		    
+		  if(pageControl) {
+		    	System.out.println("Burası 2.sayfa");
+		  }
+		  else {
+		    	System.out.println("Burası 2.sayfa değil!");
+		  }
+			 
 		WebElement productIdName = driver.findElement(By.id("result_18"));
 		productIdName.click();
-	   
+		 
 		WebElement addToListIdName = driver.findElement(By.id("add-to-wishlist-button-submit"));
 		addToListIdName.submit();
 		
